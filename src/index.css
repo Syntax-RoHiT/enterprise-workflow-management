@@ -1,0 +1,360 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Multi-theme design system — 6 themes
+   Each theme sets CSS custom properties. `.dark`/`.light` class controls mode.
+   ========================================================================== */
+
+@layer base {
+    /* ----------------------------------------------------------------
+       MIDNIGHT — Default dark (cyan → purple gradient)
+       ---------------------------------------------------------------- */
+    :root,
+    .theme-midnight {
+        --background: 222 47% 5%;
+        --foreground: 0 0% 100%;
+        --card: 222 40% 9%;
+        --card-foreground: 0 0% 100%;
+        --popover: 222 40% 9%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 190 95% 55%;
+        --primary-foreground: 222 47% 5%;
+        --primary-glow: 270 90% 65%;
+        --secondary: 222 30% 14%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 222 25% 12%;
+        --muted-foreground: 215 16% 65%;
+        --accent: 270 90% 65%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --success: 142 76% 45%;
+        --warning: 38 92% 55%;
+        --border: 0 0% 100% / 0.1;
+        --input: 222 30% 14%;
+        --ring: 190 95% 55%;
+        --radius: 0.625rem;
+
+        --gradient-primary: linear-gradient(135deg, hsl(190 95% 55%), hsl(270 90% 65%));
+        --gradient-card: linear-gradient(180deg, hsl(222 40% 10%), hsl(222 40% 8%));
+        --gradient-glow: radial-gradient(600px circle at 50% 0%, hsl(190 95% 55% / 0.15), transparent 60%);
+
+        --shadow-glow: 0 0 30px hsl(190 95% 55% / 0.25);
+        --shadow-glow-purple: 0 0 30px hsl(270 90% 65% / 0.25);
+        --shadow-card: 0 8px 30px -12px hsl(222 47% 2% / 0.6);
+
+        --sidebar-background: 222 50% 4%;
+        --sidebar-foreground: 0 0% 90%;
+        --sidebar-primary: 190 95% 55%;
+        --sidebar-primary-foreground: 222 47% 5%;
+        --sidebar-accent: 222 30% 12%;
+        --sidebar-accent-foreground: 0 0% 100%;
+        --sidebar-border: 0 0% 100% / 0.06;
+        --sidebar-ring: 190 95% 55%;
+
+        --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ----------------------------------------------------------------
+       DAYLIGHT — Clean light mode
+       ---------------------------------------------------------------- */
+    .theme-daylight {
+        --background: 210 40% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 192 91% 36%;
+        --primary-foreground: 0 0% 100%;
+        --primary-glow: 262 83% 58%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 262 83% 58%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --success: 142 76% 36%;
+        --warning: 38 92% 50%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 192 91% 36%;
+
+        --gradient-primary: linear-gradient(135deg, hsl(192 91% 36%), hsl(262 83% 58%));
+        --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+        --gradient-glow: radial-gradient(600px circle at 50% 0%, hsl(192 91% 36% / 0.08), transparent 60%);
+
+        --shadow-glow: 0 0 30px hsl(192 91% 36% / 0.15);
+        --shadow-glow-purple: 0 0 30px hsl(262 83% 58% / 0.15);
+        --shadow-card: 0 8px 30px -12px hsl(214 32% 80% / 0.3);
+
+        --sidebar-background: 0 0% 100%;
+        --sidebar-foreground: 222 47% 20%;
+        --sidebar-primary: 192 91% 36%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 210 40% 96%;
+        --sidebar-accent-foreground: 222 47% 11%;
+        --sidebar-border: 214 32% 91%;
+        --sidebar-ring: 192 91% 36%;
+    }
+
+    /* ----------------------------------------------------------------
+       OCEAN — Deep blue dark
+       ---------------------------------------------------------------- */
+    .theme-ocean {
+        --background: 213 50% 5%;
+        --foreground: 0 0% 100%;
+        --card: 213 45% 9%;
+        --card-foreground: 0 0% 100%;
+        --popover: 213 45% 9%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 199 89% 55%;
+        --primary-foreground: 213 50% 5%;
+        --primary-glow: 172 66% 50%;
+        --secondary: 213 35% 14%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 213 30% 12%;
+        --muted-foreground: 210 20% 65%;
+        --accent: 172 66% 50%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --success: 142 76% 45%;
+        --warning: 38 92% 55%;
+        --border: 0 0% 100% / 0.08;
+        --input: 213 35% 14%;
+        --ring: 199 89% 55%;
+
+        --gradient-primary: linear-gradient(135deg, hsl(199 89% 55%), hsl(172 66% 50%));
+        --gradient-card: linear-gradient(180deg, hsl(213 45% 10%), hsl(213 45% 8%));
+        --gradient-glow: radial-gradient(600px circle at 50% 0%, hsl(199 89% 55% / 0.12), transparent 60%);
+
+        --shadow-glow: 0 0 30px hsl(199 89% 55% / 0.2);
+        --shadow-glow-purple: 0 0 30px hsl(172 66% 50% / 0.2);
+        --shadow-card: 0 8px 30px -12px hsl(213 50% 2% / 0.6);
+
+        --sidebar-background: 213 55% 3%;
+        --sidebar-foreground: 0 0% 90%;
+        --sidebar-primary: 199 89% 55%;
+        --sidebar-primary-foreground: 213 50% 5%;
+        --sidebar-accent: 213 35% 12%;
+        --sidebar-accent-foreground: 0 0% 100%;
+        --sidebar-border: 0 0% 100% / 0.06;
+        --sidebar-ring: 199 89% 55%;
+    }
+
+    /* ----------------------------------------------------------------
+       SUNSET — Warm orange/rose dark
+       ---------------------------------------------------------------- */
+    .theme-sunset {
+        --background: 15 40% 5%;
+        --foreground: 0 0% 100%;
+        --card: 15 35% 9%;
+        --card-foreground: 0 0% 100%;
+        --popover: 15 35% 9%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 25 95% 60%;
+        --primary-foreground: 15 40% 5%;
+        --primary-glow: 350 80% 60%;
+        --secondary: 15 25% 14%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 15 20% 12%;
+        --muted-foreground: 20 16% 65%;
+        --accent: 350 80% 60%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --success: 142 76% 45%;
+        --warning: 45 93% 55%;
+        --border: 0 0% 100% / 0.08;
+        --input: 15 25% 14%;
+        --ring: 25 95% 60%;
+
+        --gradient-primary: linear-gradient(135deg, hsl(25 95% 60%), hsl(350 80% 60%));
+        --gradient-card: linear-gradient(180deg, hsl(15 35% 10%), hsl(15 35% 8%));
+        --gradient-glow: radial-gradient(600px circle at 50% 0%, hsl(25 95% 60% / 0.12), transparent 60%);
+
+        --shadow-glow: 0 0 30px hsl(25 95% 60% / 0.2);
+        --shadow-glow-purple: 0 0 30px hsl(350 80% 60% / 0.2);
+        --shadow-card: 0 8px 30px -12px hsl(15 40% 2% / 0.6);
+
+        --sidebar-background: 15 45% 3%;
+        --sidebar-foreground: 0 0% 90%;
+        --sidebar-primary: 25 95% 60%;
+        --sidebar-primary-foreground: 15 40% 5%;
+        --sidebar-accent: 15 25% 12%;
+        --sidebar-accent-foreground: 0 0% 100%;
+        --sidebar-border: 0 0% 100% / 0.06;
+        --sidebar-ring: 25 95% 60%;
+    }
+
+    /* ----------------------------------------------------------------
+       FOREST — Green-tinted dark
+       ---------------------------------------------------------------- */
+    .theme-forest {
+        --background: 150 40% 4%;
+        --foreground: 0 0% 100%;
+        --card: 150 35% 8%;
+        --card-foreground: 0 0% 100%;
+        --popover: 150 35% 8%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 142 72% 50%;
+        --primary-foreground: 150 40% 4%;
+        --primary-glow: 80 65% 50%;
+        --secondary: 150 25% 13%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 150 20% 11%;
+        --muted-foreground: 145 12% 60%;
+        --accent: 80 65% 50%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --success: 142 76% 45%;
+        --warning: 38 92% 55%;
+        --border: 0 0% 100% / 0.08;
+        --input: 150 25% 13%;
+        --ring: 142 72% 50%;
+
+        --gradient-primary: linear-gradient(135deg, hsl(142 72% 50%), hsl(80 65% 50%));
+        --gradient-card: linear-gradient(180deg, hsl(150 35% 9%), hsl(150 35% 7%));
+        --gradient-glow: radial-gradient(600px circle at 50% 0%, hsl(142 72% 50% / 0.12), transparent 60%);
+
+        --shadow-glow: 0 0 30px hsl(142 72% 50% / 0.2);
+        --shadow-glow-purple: 0 0 30px hsl(80 65% 50% / 0.2);
+        --shadow-card: 0 8px 30px -12px hsl(150 40% 2% / 0.6);
+
+        --sidebar-background: 150 45% 3%;
+        --sidebar-foreground: 0 0% 90%;
+        --sidebar-primary: 142 72% 50%;
+        --sidebar-primary-foreground: 150 40% 4%;
+        --sidebar-accent: 150 25% 11%;
+        --sidebar-accent-foreground: 0 0% 100%;
+        --sidebar-border: 0 0% 100% / 0.06;
+        --sidebar-ring: 142 72% 50%;
+    }
+
+    /* ----------------------------------------------------------------
+       CYBERPUNK — Neon pink/yellow dark
+       ---------------------------------------------------------------- */
+    .theme-cyberpunk {
+        --background: 280 40% 5%;
+        --foreground: 0 0% 100%;
+        --card: 280 35% 9%;
+        --card-foreground: 0 0% 100%;
+        --popover: 280 35% 9%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 330 80% 65%;
+        --primary-foreground: 280 40% 5%;
+        --primary-glow: 48 96% 53%;
+        --secondary: 280 25% 14%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 280 20% 12%;
+        --muted-foreground: 275 14% 65%;
+        --accent: 48 96% 53%;
+        --accent-foreground: 280 40% 5%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --success: 142 76% 45%;
+        --warning: 38 92% 55%;
+        --border: 0 0% 100% / 0.1;
+        --input: 280 25% 14%;
+        --ring: 330 80% 65%;
+
+        --gradient-primary: linear-gradient(135deg, hsl(330 80% 65%), hsl(48 96% 53%));
+        --gradient-card: linear-gradient(180deg, hsl(280 35% 10%), hsl(280 35% 8%));
+        --gradient-glow: radial-gradient(600px circle at 50% 0%, hsl(330 80% 65% / 0.15), transparent 60%);
+
+        --shadow-glow: 0 0 30px hsl(330 80% 65% / 0.25);
+        --shadow-glow-purple: 0 0 30px hsl(48 96% 53% / 0.25);
+        --shadow-card: 0 8px 30px -12px hsl(280 40% 2% / 0.6);
+
+        --sidebar-background: 280 45% 3%;
+        --sidebar-foreground: 0 0% 90%;
+        --sidebar-primary: 330 80% 65%;
+        --sidebar-primary-foreground: 280 40% 5%;
+        --sidebar-accent: 280 25% 12%;
+        --sidebar-accent-foreground: 0 0% 100%;
+        --sidebar-border: 0 0% 100% / 0.06;
+        --sidebar-ring: 330 80% 65%;
+    }
+
+    /* .dark alias removed to prevent overriding .theme-* classes */
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html,
+    body,
+    #root {
+        @apply h-full;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-feature-settings: "rlig" 1, "calt" 1;
+        background-image:
+            radial-gradient(800px circle at 0% 0%, hsl(var(--primary) / 0.06), transparent 50%),
+            radial-gradient(800px circle at 100% 100%, hsl(var(--accent) / 0.06), transparent 50%);
+        background-attachment: fixed;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Light mode body adjustments */
+    .light body {
+        background-image:
+            radial-gradient(800px circle at 0% 0%, hsl(var(--primary) / 0.04), transparent 50%),
+            radial-gradient(800px circle at 100% 100%, hsl(var(--accent) / 0.04), transparent 50%);
+    }
+}
+
+@layer utilities {
+    .gradient-text {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .gradient-bg {
+        background: var(--gradient-primary);
+    }
+
+    .glow {
+        box-shadow: var(--shadow-glow);
+    }
+
+    .card-hover {
+        transition: var(--transition-smooth);
+    }
+
+    .card-hover:hover {
+        border-color: hsl(var(--primary) / 0.4);
+        transform: translateY(-2px);
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: hsl(var(--muted-foreground) / 0.3);
+        border-radius: 3px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--muted-foreground) / 0.5);
+    }
+
+    /* Theme transition for smooth switching */
+    .theme-transitioning * {
+        transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    }
+}
