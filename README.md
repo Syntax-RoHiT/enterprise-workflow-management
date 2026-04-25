@@ -1,6 +1,5 @@
 # Nexus - Enterprise Task & Workflow Management
 
-![Nexus Banner](https://lovable.dev/opengraph-image-p98pqg.png)
 
 Nexus is a powerful, modern SaaS application designed to combine the power of Jira, the flexibility of Notion, and the speed of Linear into a single, cohesive task and workflow platform. Built with performance and user experience in mind, Nexus provides rapid, local-first data management with a sleek, customizable interface.
 
